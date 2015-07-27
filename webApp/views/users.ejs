@@ -1,0 +1,30 @@
+<!doctype html>
+<html ng-app="witouch-manager">
+<head>
+    <% include ./partials/header %>
+    <script src="/static/js/socket.io-1.3.5.js"></script>
+    <script src="/static/js/liveRPI.js"></script>    
+    <script src="/static/bower_components/jquery/dist/jquery.min.js"></script>
+</head>
+<body>
+<div class="container">
+
+    <div class="page-header text-center">
+        <h1><span class="fa fa-users"></span> <%= tagline %></h1>
+        <a href="./logout" class="btn btn-default btn-sm">Logout</a>
+        <a href="./profile" class="btn btn-default btn-sm">My profile</a>
+        <a href="./cams" class="btn btn-default btn-sm">My cams</a>       
+
+    </div>
+
+    <div class="row" >
+
+        <!-- LOCAL INFORMATION -->
+        <% users.forEach(function(user) { %>
+        <% include ./partials/user %><% }); %>
+
+    </div>
+
+</div>
+</body>
+</html>

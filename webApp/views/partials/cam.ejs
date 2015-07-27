@@ -1,0 +1,11 @@
+<div class="col-sm-5" ng-controller="one-cam" >
+	<div class="well" style="background-color:white;">
+
+        <p>
+            <strong>Name</strong>: <span ng-init="feedName = '<%= cam.name %>'"><%= cam.name %></span><br>
+            <strong>Uri</strong>: <span ng-init="rtmpUri = '<%= cam.rtmpUri %>'"><%= cam.rtmpUri %></span><br>
+            <button ng-click="play()" class="btn btn-primary btn-sm" href="#" role="button" id="playFeed" data-loading-text="Updating... ">Play</button> 
+            <span class="fa fa-cog fa-spin fa-lg" ng-show="loading"></span>
+        </p>
+	</div> 
+</div> 
