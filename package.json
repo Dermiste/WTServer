@@ -13,6 +13,7 @@
      	"passport" : "~0.1.17",         
     	"passport-local" : "~0.1.6",
     	"bcrypt-nodejs" : "latest",
-    	"connect-flash" : "~0.1.1"
+    	"connect-flash" : "~0.1.1",
+        "node-rtsp-rtmp-server" : "Dermiste/node-rtsp-rtmp-server#def79292ac"
     }
 }

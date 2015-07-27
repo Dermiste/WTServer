@@ -1,4 +1,4 @@
-exports.start = function() {
+//exports.start = function() {
 	var io 		   = require('socket.io');
 	var express    = require('express');        
 	var app        = express();                 
@@ -15,6 +15,8 @@ exports.start = function() {
 	var flash        = require('connect-flash');
 
 	var witouchSockets = require('witouch-sockets');
+
+	var rtmpServer 	= require("node-rtsp-rtmp-server");
 
 	var mongoUri = 'mongodb://localhost:27017/DevEdall'
 	mongoose.connect(mongoUri);
@@ -59,7 +61,7 @@ exports.start = function() {
 	app.listen(port);
 	console.log('Server started on port ' + port);
 
-	delete exports.start;
+	//delete exports.start;
 
 	// THE SOCKET
 	// =============================================================================
@@ -67,4 +69,4 @@ exports.start = function() {
 	
 	witouchSockets.init(port + 1, app);
 
-}
+//}
