@@ -1,4 +1,4 @@
-var socket = io.connect('http://localhost:8081/status');
+var socket = io.connect(serverPath+'status');
   socket.on('rpiConnectionsUpdated', function (data) {
   	console.log(data);
     $.each(data, function( key, value ) {

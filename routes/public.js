@@ -1,4 +1,5 @@
 var witouchSockets = require('witouch-sockets');
+var config         = require('config');
 
 module.exports = function(app, passport){
     var user = require(__dirname+'/../controllers/public/userController');
@@ -58,7 +59,8 @@ module.exports = function(app, passport){
         req.user.isOnline = sessionHolder.isOnline(req.user._id);
         res.render('profile.ejs', {
         	tagline : "Profile",
-            user : req.user // get the user out of session and pass to template
+            user : req.user, // get the user out of session and pass to template
+            serverPath : config.get("Socket.baseUrl")
         });
     });
 
@@ -74,7 +76,8 @@ module.exports = function(app, passport){
         res.render('cams.ejs', {
             clientID : req.user._id,
             tagline : "My cams",
-            camFeeds : req.user.camFeeds // get the user out of session and pass to template
+            camFeeds : req.user.camFeeds, // get the user out of session and pass to template,
+            serverPath : config.get("Socket.baseUrl")
         });
     });    
 

@@ -1,3 +1,4 @@
+var config 		= require('config');
 var mongoose = require('mongoose'),
 User = mongoose.model('User');
 
@@ -12,7 +13,7 @@ exports.findAll = function(req, res){
     	users[key].isOnline = sessionHolder.isOnline(users[key]._id);
 	});
 
-    res.render('users',{tagline:"All users",users:users});
+    res.render('users',{tagline:"All users",users:users,serverPath:config.get("Socket.baseUrl")});
   });
 };
 

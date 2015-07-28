@@ -1,5 +1,5 @@
 var witouchApp = angular.module('cam-viewer', []).factory('socket', ['clientID',function(clientID) {
-	return io.connect('http://localhost:8081/feedStatus',{query:"clientID="+clientID});
+	return io.connect(serverPath+'/feedStatus',{query:"clientID="+clientID});
   
 }]);
 
