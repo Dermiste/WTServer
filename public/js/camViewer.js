@@ -33,8 +33,9 @@ witouchApp.controller('one-cam', function ($scope,$rootScope,$http,socket) {
 				$scope.$apply(function(){
 		            $scope.loading = false;
 		        });
-
-				$rootScope.$broadcast("someEvent",{rtmpUri:$scope.rtmpUri});
+		        if (data.status[0].isLive){
+					$rootScope.$broadcast("someEvent",{rtmpUri:$scope.rtmpUri});
+				}
 			});
 		});
 	};
