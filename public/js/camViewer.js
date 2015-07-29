@@ -1,6 +1,6 @@
 var witouchApp = angular.module('cam-viewer', []).factory('socket', ['clientID',function(clientID) {
-	return io.connect(serverPath+'/feedStatus',{query:"clientID="+clientID});
-  
+	console.log("CamViewer :: serverPath : "+serverPath+"feedStatus");
+	return io.connect(serverPath+'feedStatus',{query:"clientID="+clientID});
 }]);
 
 witouchApp.value('clientID',clientID);
